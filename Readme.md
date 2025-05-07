@@ -107,7 +107,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - Open-source libraries and frameworks used in this project.
 - Inspiration from the field of affective computing.
-
-## Contact
-
-For questions or feedback, please contact [your-email@example.com].
