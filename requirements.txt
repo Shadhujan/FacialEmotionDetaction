@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+gunicorn
+psycopg2-binary
+numpy
+opencv-python
+Flask

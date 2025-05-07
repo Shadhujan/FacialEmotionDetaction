@@ -1,0 +1,252 @@
+:root {
+    --primary: #6C63FF;
+    --secondary: #2D3748;
+    --background: #F7FAFC;
+    --text: #1A202C;
+    --success: #48BB78;
+    --warning: #ECC94B;
+    --danger: #F56565;
+    --light: #EDF2F7;
+    --padding: 16px;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--padding);
+}
+
+/* Header Styles */
+.app-title {
+    color: var(--primary);
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.app-description {
+    color: var(--secondary);
+    font-size: 1.1rem;
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--padding);
+    padding: var(--padding) 0;
+}
+
+/* Camera Styles */
+.camera-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    height: 480px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #000;
+}
+
+#webcam {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Controls */
+.controls-container {
+    display: flex;
+    justify-content: center;
+    gap: var(--padding);
+    margin: var(--padding) 0;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background-color: #5a52db;
+    border-color: #5a52db;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    border-color: var(--secondary);
+}
+
+/* Results Section */
+.results-container {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.card {
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    border: none;
+}
+
+.card-header {
+    background-color: var(--light);
+    padding: var(--padding);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--secondary);
+}
+
+.card-body {
+    padding: var(--padding);
+}
+
+.emotion-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--light);
+}
+
+.emotion-item:last-child {
+    border-bottom: none;
+}
+
+.emotion-name {
+    font-weight: 500;
+}
+
+.emotion-confidence {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Animation for loading */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.loading {
+    animation: pulse 1.5s infinite;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .video-wrapper {
+        height: 360px;
+    }
+}
+
+@media (max-width: 576px) {
+    .video-wrapper {
+        height: 320px;
+    }
+    
+    .app-title {
+        font-size: 1.8rem;
+    }
+    
+    .app-description {
+        font-size: 1rem;
+    }
+}
+
+/* Face box styles */
+.face-box {
+    position: absolute;
+    border: 3px solid var(--primary);
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.emotion-label {
+    position: absolute;
+    top: -30px;
+    left: 0;
+    background-color: var(--primary);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* States */
+.d-none {
+    display: none !important;
+}
+
+/* Emotion colors */
+.emotion-Angry {
+    background-color: var(--danger) !important;
+}
+
+.emotion-Happy {
+    background-color: var(--success) !important;
+}
+
+.emotion-Sad {
+    background-color: #3182CE !important;
+}
+
+.emotion-Surprise {
+    background-color: var(--warning) !important;
+}
+
+.emotion-Neutral {
+    background-color: var(--secondary) !important;
+}
+
+.emotion-Fear {
+    background-color: #9F7AEA !important;
+}
+
+.emotion-Disgust {
+    background-color: #805AD5 !important;
+}
